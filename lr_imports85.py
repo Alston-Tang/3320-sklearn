@@ -84,7 +84,6 @@ plt.plot(test_x_scaled, test_y_scaled, "bo")
 plt.plot(test_x_scaled, predict_y_scaled, "ro")
 plt.xlabel("Standardized Engine size")
 plt.ylabel("Standardized Price")
-plt.title("Linear regression on standardized data"
-          "")
+plt.title("Linear regression on standardized data")
 plt.show()
 
