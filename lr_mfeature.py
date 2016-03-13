@@ -60,17 +60,16 @@ unit_feature = np.ones((n_samples, 1))
 u_x = np.append(unit_feature, x, axis=1)
 u_x_t = np.transpose(u_x)
 
+
 theta = np.dot(np.dot(np.linalg.inv(np.dot(u_x_t, u_x)), u_x_t), samples_price)
 
-# Todo: write to report
 print ("Parameter theta calculated by normal equation: [{0}, {1}, {2}]".format(theta[0][0], theta[1][0], theta[2][0]))
 
 clf = linear_model.SGDRegressor(loss="squared_loss")
-clf.fit(u_x, np.ravel(samples_price))
+clf.fit(x, np.ravel(samples_price))
 
-# Todo: write to report
 print ("Parameter theta calculated by SGD: [{0}, {1}, {2}]".
-       format(clf.coef_[0] + clf.intercept_[0], clf.coef_[1], clf.coef_[2]))
+       format(clf.intercept_[0], clf.coef_[0], clf.coef_[1]))
 
 
 

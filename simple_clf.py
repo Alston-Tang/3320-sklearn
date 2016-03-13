@@ -22,8 +22,8 @@ n_test_samples = X_test.shape[0]
 log_reg.fit(X_train, y_train)
 y_predict = log_reg.predict(X_test)
 
-# Todo: write to report
-# The predictions only have 0 and 1: no
+
+# The predictions only have 0 and 1: yes
 
 e_count = 0
 
@@ -35,6 +35,6 @@ for i in range(0, n_test_samples):
     else:
         plt.scatter(X_test[i][0], X_test[i][1], c="R")
 plt.show()
-# Todo: write to report
+
 print ("Number of wrong predictions is: {0}".format(e_count))
 

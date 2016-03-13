@@ -14,12 +14,11 @@ y_test = [[8.3], [12.5], [15.4], [18.6]]
 lr_model = LinearRegression()
 lr_model.fit(X_train, y_train)
 
-# Todo: write to report
 print ("y1= {0} + {1} x".format(lr_model.intercept_[0], lr_model.coef_[0][0]))
 xx = np.linspace(0, 26, 100)
 yy = lr_model.predict(xx.reshape(xx.shape[0], 1))
 lr_score = lr_model.score(X_test, y_test)
-# Todo: write to report
+
 print ("Linear regression (order 1) model score is: {0}".format(lr_score))
 plt.plot(xx, yy)
 plt.plot(X_test, y_test, "o")
@@ -33,7 +32,7 @@ X_test_poly = poly.transform(X_test)
 
 lr_5_model = LinearRegression()
 lr_5_model.fit(X_train_poly, y_train)
-# Todo: write to report
+
 print ("y2= {0} + {1} x + {2} x*x + {3} x*x*x + {4} x*x*x*x +{5} x*x*x*x*x".
        format(lr_5_model.intercept_[0], lr_5_model.coef_[0][0], lr_5_model.coef_[0][1], lr_5_model.coef_[0][2],
               lr_5_model.coef_[0][3], lr_5_model.coef_[0][4]))
